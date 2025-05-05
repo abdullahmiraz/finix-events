@@ -3,6 +3,15 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  /* Brand Colors */
+  --color-brand-primary: #34735F;
+  --color-brand-secondary: #1f985c;
+  --color-brand-blue: #00bfff;
+  --color-brand-destructive: #DA6049;
+  --color-brand-purple: #EFEDFF;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -45,8 +54,6 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -76,6 +83,8 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
 }
 
 .dark {
@@ -119,4 +128,10 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+
+body{
+  font-family: 'Satoshi', sans-serif;
+
 }
