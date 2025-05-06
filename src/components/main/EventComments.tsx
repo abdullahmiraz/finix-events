@@ -6,7 +6,7 @@ const comments = [
     name: "Alex Mercer",
     initials: "AM",
     time: "14 min",
-    message: "Looking forward to the game! What's the final player count?",
+    message: "Looking forward to the game! Whats the final player count?",
     color: "bg-primary text-white",
     avatarBg: "bg-creamy text-primary",
     replies: [
@@ -35,7 +35,7 @@ const comments = [
     name: "Alex Mercer",
     initials: "AM",
     time: "14 min",
-    message: "Looking forward to the game! What's the final player count?",
+    message: "Looking forward to the game! Whats the final player count?",
     color: "bg-primary text-white",
     avatarBg: "bg-creamy text-primary",
     replies: [],
@@ -45,7 +45,7 @@ const comments = [
     name: "Alex Mercer",
     initials: "AM",
     time: "14 min",
-    message: "Looking forward to the game! What's the final player count?",
+    message: "Looking forward to the game! Whats the final player count?",
     color: "bg-primary text-white",
     avatarBg: "bg-creamy text-primary",
     replies: [
