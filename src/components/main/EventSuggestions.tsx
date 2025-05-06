@@ -1,8 +1,9 @@
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Image from "next/image";
 import { DefaultContainer } from "../layouts/default-container";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-
+import { ChevronLeft, ChevronRight, SignalHigh } from "lucide-react";
+import { ReactNode } from "react";
+import { Icons } from "../ui/icons";
 
 const events = [
     {
@@ -11,9 +12,9 @@ const events = [
         price: "320/person",
         date: "Thu, Dec 5 • 12:30AM - 12:30PM",
         tags: [
-            { label: "Football", icon: "⚽", color: "bg-cyan-50 text-cyan-700" },
-            { label: "Below 25y", icon: "🎂", color: "bg-purple-50 text-purple-700" },
-            { label: "Advanced", icon: "📈", color: "bg-green-50 text-green-700" },
+            { label: "Football", icon: null, color: "bg-cyan-50 text-cyan-700" },
+            { label: "Below 25y", icon: null, color: "bg-purple-50 text-purple-700" },
+            { label: "Advanced", icon: <SignalHigh className="w-4 h-4" />, color: "bg-green-50 text-green-700" },
         ],
         image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80",
         location: "Bashundhara Sports Complex",
@@ -25,9 +26,9 @@ const events = [
         price: "320/person",
         date: "Thu, Dec 5 • 12:30AM - 12:30PM",
         tags: [
-            { label: "Football", icon: "⚽", color: "bg-cyan-50 text-cyan-700" },
-            { label: "Below 25y", icon: "🎂", color: "bg-purple-50 text-purple-700" },
-            { label: "Advanced", icon: "📈", color: "bg-green-50 text-green-700" },
+            { label: "Football", icon: null, color: "bg-cyan-50 text-cyan-700" },
+            { label: "Below 25y", icon: null, color: "bg-purple-50 text-purple-700" },
+            { label: "Advanced", icon: <SignalHigh className="w-4 h-4" />, color: "bg-green-50 text-green-700" },
         ],
         image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
         location: "Bashundhara Sports Complex",
@@ -39,9 +40,9 @@ const events = [
         price: "320/person",
         date: "Thu, Dec 5 • 12:30AM - 12:30PM",
         tags: [
-            { label: "Football", icon: "⚽", color: "bg-cyan-50 text-cyan-700" },
-            { label: "Below 25y", icon: "🎂", color: "bg-purple-50 text-purple-700" },
-            { label: "Advanced", icon: "📈", color: "bg-green-50 text-green-700" },
+            { label: "Football", icon: null, color: "bg-cyan-50 text-cyan-700" },
+            { label: "Below 25y", icon: null, color: "bg-purple-50 text-purple-700" },
+            { label: "Advanced", icon: <SignalHigh className="w-4 h-4" />, color: "bg-green-50 text-green-700" },
         ],
         image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80",
         location: "Bashundhara Sports Complex",
@@ -53,9 +54,9 @@ const events = [
         price: "320/person",
         date: "Thu, Dec 5 • 12:30AM - 12:30PM",
         tags: [
-            { label: "Football", icon: "⚽", color: "bg-cyan-50 text-cyan-700" },
-            { label: "Below 25y", icon: "🎂", color: "bg-purple-50 text-purple-700" },
-            { label: "Advanced", icon: "📈", color: "bg-green-50 text-green-700" },
+            { label: "Football", icon: null, color: "bg-cyan-50 text-cyan-700" },
+            { label: "Below 25y", icon: null, color: "bg-purple-50 text-purple-700" },
+            { label: "Advanced", icon: <SignalHigh className="w-4 h-4" />, color: "bg-green-50 text-green-700" },
         ],
         image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80",
         location: "Bashundhara Sports Complex",
@@ -67,7 +68,25 @@ const events = [
 
 
 
-function EventCard({ title, spots, price, date, tags, image, location, attending }: { title: string; spots: string; price: string; date: string; tags: { label: string; icon: string; color: string }[]; image: string; location: string; attending: string }) {
+function EventCard({
+    title,
+    spots,
+    price,
+    date,
+    tags,
+    image,
+    location,
+    attending,
+}: {
+    title: string;
+    spots: string;
+    price: string;
+    date: string;
+    tags: { label: string; icon: ReactNode; color: string }[];
+    image: string;
+    location: string;
+    attending: string;
+}) {
     return (
         <div className="min-w-[440px] max-w-[440px] bg-white rounded-2xl shadow p-0 flex flex-col overflow-hidden relative">
             <div className="relative">
@@ -89,9 +108,9 @@ function EventCard({ title, spots, price, date, tags, image, location, attending
                     {location}
                 </div>
                 <div className="flex items-center justify-between text-xs mt-2">
-                    <span className="text-[#e26a2c] font-medium">{spots} spots left</span>
+                    <span className="text-[#e26a2c] font-medium">{spots}</span>
                     <span className="text-gray-500">{attending} attending</span>
-                    <span className="font-semibold text-base text-[#2ec28a]">{price}</span>
+                    <span className="font-semibold text-base   flex items-center gap-1"> <Icons.takaIcon className="w-4 h-4" /> {price}</span>
                 </div>
             </div>
         </div>
@@ -101,7 +120,7 @@ function EventCard({ title, spots, price, date, tags, image, location, attending
 export function EventSuggestions() {
 
     return (
-        <section className="  bg-white rounded-2xl shadow p-4">
+        <section className="  bg-white  p-4">
             <DefaultContainer
             >
 

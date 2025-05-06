@@ -13,13 +13,13 @@ export default function EventDetails() {
                         <h1 className="text-2xl md:text-3xl font-bold mb-1">Road to the Football Finals</h1>
                     </div>                    <div className="flex items-center gap-2">
                         <div className="p-1 rounded-full border">
-                            <Upload className="w-4 h-4 text-brand-primary" />
+                            <Upload className="w-4 h-4 text-primary" />
                         </div>
                         <div className="p-1 rounded-full border">
-                            <Heart className="w-4 h-4 text-brand-primary" />
+                            <Heart className="w-4 h-4 text-primary" />
                         </div>
                         <div className="p-1 rounded-full border">
-                            <EllipsisVertical className="w-4 h-4 text-brand-primary" />
+                            <EllipsisVertical className="w-4 h-4 text-primary" />
                         </div>
                     </div>
                 </div>

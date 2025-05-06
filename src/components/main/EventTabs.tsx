@@ -1,10 +1,13 @@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { SignalLow } from "lucide-react";
 import EventInfo from "./EventInfo";
+import EventPlayers from "./EventPlayers";
+import EventComments from "./EventComments";
+
 // 1. Define the tags array
 const eventTags = [
-    { label: "Football", className: "bg-brand-primary-light/20", icon: null },
-    { label: "Relay", className: "bg-brand-primary-light/20", icon: null },
+    { label: "Football", className: "bg-primary-light/20", icon: null },
+    { label: "Relay", className: "bg-primary-light/20", icon: null },
     { label: "Female", className: "bg-pink-100", icon: null },
     { label: "Age: Below 25", className: "bg-purple-100", icon: null },
     { label: "Beginner", className: "bg-green-100", icon: <SignalLow className="w-4 h-4" strokeWidth={2.5} /> },
@@ -44,9 +47,9 @@ export function EventTabs() {
                         border-0
                           border-b-2
                           border-transparent
-                          data-[state=active]:border-brand-destructive
+                          data-[state=active]:border-destructive
                           bg-transparent
-                          data-[state=active]:text-brand-destructive
+                          data-[state=active]:text-destructive
                           data-[state=active]:bg-transparent
                           data-[state=active]:shadow-none
                           rounded-none
@@ -63,10 +66,10 @@ export function EventTabs() {
                 <EventInfo />
             </TabsContent>
             <TabsContent value="player">
-                <div className="text-gray-500 text-sm">Player info coming soon...</div>
+                <EventPlayers />
             </TabsContent>
             <TabsContent value="comments">
-                <div className="text-gray-500 text-sm">Comments coming soon...</div>
+                <EventComments />
             </TabsContent>
         </Tabs>
     );

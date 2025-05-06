@@ -42,14 +42,14 @@ export function Header() {
                     </div>
                     {/* Right: Leaderboard, Login, Menu, Avatar */}
                     <div className="flex items-center gap-3">
-                        <Button variant="ghost" className="bg-brand-primary/10 text-brand-primary rounded-full px-4 py-2 font-medium flex items-center gap-2">
-                            <Icons.logo className="text-brand-primary" /> Leaderboard
+                        <Button variant="ghost" className="bg-primary/10 text-primary rounded-full px-4 py-2 font-medium flex items-center gap-2">
+                            <Icons.logo className="text-primary" /> Leaderboard
                         </Button>
-                        <Button variant="outline" className="rounded-full px-4 py-2 font-medium border-brand-primary text-brand-primary">Login / Sign up</Button>
-                        <div className="flex items-center gap-3 p-1 rounded-full border-brand-primary/30 border">
-                            <Menu className="w-4 h-4 text-brand-primary" />
+                        <Button variant="outline" className="rounded-full px-4 py-2 font-medium border-primary text-primary">Login / Sign up</Button>
+                        <div className="flex items-center gap-3 p-1 rounded-full border-primary/30 border">
+                            <Menu className="w-4 h-4 text-primary" />
                             <div className="p-1 rounded-full bg-gray-300">
-                                <User2 className="w-6 h-5 text-brand-primary " />
+                                <User2 className="w-6 h-5 text-primary " />
                             </div>
                         </div>
                     </div>
