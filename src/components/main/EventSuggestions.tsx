@@ -1,11 +1,75 @@
-'use client'
-
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Image from "next/image";
-import { useState } from "react";
+import { DefaultContainer } from "../layouts/default-container";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+
+const events = [
+    {
+        title: "Legends Rise on the Field",
+        spots: "2 spots left",
+        price: "320/person",
+        date: "Thu, Dec 5 • 12:30AM - 12:30PM",
+        tags: [
+            { label: "Football", icon: "⚽", color: "bg-cyan-50 text-cyan-700" },
+            { label: "Below 25y", icon: "🎂", color: "bg-purple-50 text-purple-700" },
+            { label: "Advanced", icon: "📈", color: "bg-green-50 text-green-700" },
+        ],
+        image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80",
+        location: "Bashundhara Sports Complex",
+        attending: "6/8",
+    },
+    {
+        title: "Chasing Glory: Football Showdown",
+        spots: "2 spots left",
+        price: "320/person",
+        date: "Thu, Dec 5 • 12:30AM - 12:30PM",
+        tags: [
+            { label: "Football", icon: "⚽", color: "bg-cyan-50 text-cyan-700" },
+            { label: "Below 25y", icon: "🎂", color: "bg-purple-50 text-purple-700" },
+            { label: "Advanced", icon: "📈", color: "bg-green-50 text-green-700" },
+        ],
+        image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
+        location: "Bashundhara Sports Complex",
+        attending: "6/8",
+    },
+    {
+        title: "United We Play, United Win",
+        spots: "2 spots left",
+        price: "320/person",
+        date: "Thu, Dec 5 • 12:30AM - 12:30PM",
+        tags: [
+            { label: "Football", icon: "⚽", color: "bg-cyan-50 text-cyan-700" },
+            { label: "Below 25y", icon: "🎂", color: "bg-purple-50 text-purple-700" },
+            { label: "Advanced", icon: "📈", color: "bg-green-50 text-green-700" },
+        ],
+        image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80",
+        location: "Bashundhara Sports Complex",
+        attending: "6/8",
+    },
+    {
+        title: "United We Play, United Win",
+        spots: "2 spots left",
+        price: "320/person",
+        date: "Thu, Dec 5 • 12:30AM - 12:30PM",
+        tags: [
+            { label: "Football", icon: "⚽", color: "bg-cyan-50 text-cyan-700" },
+            { label: "Below 25y", icon: "🎂", color: "bg-purple-50 text-purple-700" },
+            { label: "Advanced", icon: "📈", color: "bg-green-50 text-green-700" },
+        ],
+        image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80",
+        location: "Bashundhara Sports Complex",
+        attending: "6/8",
+    },
+];
+
+
+
+
 
 function EventCard({ title, spots, price, date, tags, image, location, attending }: { title: string; spots: string; price: string; date: string; tags: { label: string; icon: string; color: string }[]; image: string; location: string; attending: string }) {
     return (
-        <div className="min-w-[320px] max-w-[320px] bg-white rounded-2xl shadow p-0 flex flex-col overflow-hidden relative">
+        <div className="min-w-[440px] max-w-[440px] bg-white rounded-2xl shadow p-0 flex flex-col overflow-hidden relative">
             <div className="relative">
                 <Image height={128} width={320} src={image} alt={title} className="w-full h-32 object-cover" />
                 <button className="absolute top-2 right-2 bg-white/80 rounded-full p-1 shadow text-gray-500 hover:text-red-500">
@@ -35,67 +99,30 @@ function EventCard({ title, spots, price, date, tags, image, location, attending
 }
 
 export function EventSuggestions() {
-    const events = [
-        {
-            title: "Legends Rise on the Field",
-            spots: "2 spots left",
-            price: "320/person",
-            date: "Thu, Dec 5 • 12:30AM - 12:30PM",
-            tags: [
-                { label: "Football", icon: "⚽", color: "bg-cyan-50 text-cyan-700" },
-                { label: "Below 25y", icon: "🎂", color: "bg-purple-50 text-purple-700" },
-                { label: "Advanced", icon: "��", color: "bg-green-50 text-green-700" },
-            ],
-            image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80",
-            location: "Bashundhara Sports Complex",
-            attending: "6/8",
-        },
-        {
-            title: "Chasing Glory: Football Showdown",
-            spots: "2 spots left",
-            price: "320/person",
-            date: "Thu, Dec 5 • 12:30AM - 12:30PM",
-            tags: [
-                { label: "Football", icon: "⚽", color: "bg-cyan-50 text-cyan-700" },
-                { label: "Below 25y", icon: "🎂", color: "bg-purple-50 text-purple-700" },
-                { label: "Advanced", icon: "📈", color: "bg-green-50 text-green-700" },
-            ],
-            image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
-            location: "Bashundhara Sports Complex",
-            attending: "6/8",
-        },
-        {
-            title: "United We Play, United Win",
-            spots: "2 spots left",
-            price: "320/person",
-            date: "Thu, Dec 5 • 12:30AM - 12:30PM",
-            tags: [
-                { label: "Football", icon: "⚽", color: "bg-cyan-50 text-cyan-700" },
-                { label: "Below 25y", icon: "🎂", color: "bg-purple-50 text-purple-700" },
-                { label: "Advanced", icon: "📈", color: "bg-green-50 text-green-700" },
-            ],
-            image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80",
-            location: "Bashundhara Sports Complex",
-            attending: "6/8",
-        },
-    ];
-    const [index, setIndex] = useState(0);
+
     return (
-        <section className="relative">
-            <h2 className="text-lg font-semibold mb-4">Other events you may like</h2>
-            <div className="flex items-center gap-2">
-                <button className="rounded-full p-2 bg-white shadow text-gray-400 hover:text-[#2ec28a]" aria-label="Previous">
-                    <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                </button>
-                <div className="flex gap-4 overflow-x-auto pb-2">
-                    {events.map((event, i) => (
-                        <EventCard key={i} {...event} />
-                    ))}
-                </div>
-                <button className="rounded-full p-2 bg-white shadow text-gray-400 hover:text-[#2ec28a]" aria-label="Next">
-                    <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                </button>
-            </div>
+        <section className="  bg-white rounded-2xl shadow p-4">
+            <DefaultContainer
+            >
+
+                <Carousel opts={{ align: 'start' }} className="w-full relative flex flex-col gap-2">
+                    <div className="flex items-center justify-between">
+                        <h2 className="text-lg font-semibold">Other events you may like</h2>
+                        <div className="flex items-center gap-2 absolute right-20">
+                            <CarouselPrevious className="bg-slate-100 rounded-full p-2 border-none shadow-none hover:bg-slate-200" />
+                            <CarouselNext className="bg-slate-100 rounded-full p-2 border-none shadow-none hover:bg-slate-200" />
+                        </div>
+                    </div>
+                    <CarouselContent className="my-4">
+                        {events.map((event, i) => (
+                            <CarouselItem key={i} className="basis-auto pr-4">
+                                <EventCard {...event} />
+                            </CarouselItem>
+                        ))}
+                    </CarouselContent>
+
+                </Carousel>
+            </DefaultContainer>
         </section>
     );
 }

@@ -1,46 +1,60 @@
 import { Button } from "@/components/ui/button";
+import { Icons } from "../ui/icons";
+import { Input } from "../ui/input";
+import { Menu, User2 } from "lucide-react";
+import { DefaultContainer } from "../layouts/default-container";
 
 export function Header() {
     return (
-        <header className="bg-white shadow-sm">
-            <div className="max-w-screen-xl mx-auto  flex items-center justify-between px-6 py-3">
-                {/* Left: Logo */}
-                <div className="flex items-center gap-2">
-                    <span className="inline-block">
-                        {/* Medal Icon */}
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="16" fill="#7ED9B6" /><path d="M16 8l2.09 4.26L23 13.27l-3.18 3.09L20.18 21 16 18.27 11.82 21l.36-4.64L9 13.27l4.91-.99L16 8z" fill="#fff" /></svg>
-                    </span>
-                </div>
-                {/* Center: Date & Search */}
-                <div className="flex items-center gap-3 flex-1 justify-center">
-                    <div className="flex items-center bg-white rounded-full shadow px-4 py-2 gap-2">
-                        <span className="text-gray-400">Select date</span>
-                        <span className="bg-[#2ec28a] rounded-full p-1">
-                            <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="4" fill="#fff" /><path d="M8 2v4M16 2v4M3 10h18" stroke="#2ec28a" strokeWidth="2" strokeLinecap="round" /></svg>
+        <header className="bg-white shadow-xs">
+            <DefaultContainer>
+                <div className=" flex items-center justify-between  ">
+                    {/* Left: Logo */}
+                    <div className="flex items-center gap-2">
+                        <span className="inline-block">
+                            <Icons.logo />
                         </span>
                     </div>
-                    <div className="flex items-center bg-white rounded-full shadow px-4 py-2 gap-2">
-                        <span className="text-gray-400">Search</span>
-                        <span className="bg-gray-100 rounded-full p-1">
-                            <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" stroke="#888" strokeWidth="2" /><path d="M21 21l-4.35-4.35" stroke="#888" strokeWidth="2" strokeLinecap="round" /></svg>
-                        </span>
+                    {/* Center: Date & Search */}
+                    <div className="flex items-center gap-3  justify-center">
+                        {/* Date Input with Icon */}
+                        <div className="relative">
+                            <Input
+                                type="text"
+                                placeholder="Select date"
+                                className="rounded-full shadow-lg pr-12 pl-4 py-3 w-full text-base bg-white placeholder:text-gray-500"
+                                readOnly
+                            />
+                            <span className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#57d6a5] rounded-full p-2 flex items-center justify-center">
+                                <Icons.calendar className="w-3 h-3 text-black" />
+                            </span>
+                        </div>
+                        {/* Search Input with Icon */}
+                        <div className="relative">
+                            <Input
+                                placeholder="Search"
+                                className="rounded-full shadow-lg pr-12 pl-4 py-2 w-full text-base bg-white placeholder:text-gray-500"
+                            />
+                            <span className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center justify-center">
+                                <Icons.search className="w-7 h-7 text-gray-500" />
+                            </span>
+                        </div>
+                    </div>
+                    {/* Right: Leaderboard, Login, Menu, Avatar */}
+                    <div className="flex items-center gap-3">
+                        <Button variant="ghost" className="bg-brand-primary/10 text-brand-primary rounded-full px-4 py-2 font-medium flex items-center gap-2">
+                            <Icons.logo className="text-brand-primary" /> Leaderboard
+                        </Button>
+                        <Button variant="outline" className="rounded-full px-4 py-2 font-medium border-brand-primary text-brand-primary">Login / Sign up</Button>
+                        <div className="flex items-center gap-3 p-1 rounded-full border-brand-primary/30 border">
+                            <Menu className="w-4 h-4 text-brand-primary" />
+                            <div className="p-1 rounded-full bg-gray-300">
+                                <User2 className="w-6 h-5 text-brand-primary " />
+                            </div>
+                        </div>
                     </div>
                 </div>
-                {/* Right: Leaderboard, Login, Menu, Avatar */}
-                <div className="flex items-center gap-3">
-                    <Button variant="ghost" className="bg-[#f7f8f3] text-[#20504f] rounded-full px-4 py-2 font-medium flex items-center gap-2">
-                        <svg width="20" height="20" viewBox="0 0 32 32" fill="none" className="inline-block"><circle cx="16" cy="16" r="16" fill="#7ED9B6" /><path d="M16 8l2.09 4.26L23 13.27l-3.18 3.09L20.18 21 16 18.27 11.82 21l.36-4.64L9 13.27l4.91-.99L16 8z" fill="#fff" /></svg>
-                        Leaderboard
-                    </Button>
-                    <Button variant="outline" className="rounded-full px-4 py-2 font-medium border-[#20504f] text-[#20504f]">Login / Sign up</Button>
-                    <span className="bg-white rounded-full p-2 shadow flex items-center justify-center">
-                        <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="2" rx="1" fill="#20504f" /><rect x="4" y="6" width="16" height="2" rx="1" fill="#20504f" /><rect x="4" y="16" width="16" height="2" rx="1" fill="#20504f" /></svg>
-                    </span>
-                    <span className="bg-white rounded-full p-2 shadow flex items-center justify-center">
-                        <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="10" r="4" stroke="#20504f" strokeWidth="2" /><path d="M4 20c0-2.21 3.58-4 8-4s8 1.79 8 4" stroke="#20504f" strokeWidth="2" /></svg>
-                    </span>
-                </div>
-            </div>
+            </DefaultContainer>
         </header>
     );
 }

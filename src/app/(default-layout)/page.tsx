@@ -5,20 +5,27 @@ import { EventLocation } from '../../components/main/EventLocation'
 import { EventHighlights } from '../../components/main/EventHighlights'
 import { HostCard } from '../../components/main/HostCard'
 import { EventSuggestions } from '../../components/main/EventSuggestions'
-
+import { DefaultContainer } from '../../components/layouts/default-container'
+import EventJoinCard from '../../components/main/EventJoinCard'
+import EventDetails from '../../components/main/EventDetails'
 export default function HomePage() {
     return (
-        <main className="max-w-screen-xl mx-auto px-4 md:px-8 py-12 space-y-12">
-            <EventHeader />
-            <EventTabs />
-            <EventAbout />
-            <EventLocation />
-            <section>
-                <h2 className="text-xl font-semibold mb-4">Good to know</h2>
-                <EventHighlights />
-            </section>
-            <HostCard />
+        <div className="space-y-12">
+            <DefaultContainer className="space-y-12">
+                <EventHeader />
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+                    <div className="col-span-8 space-y-12">
+                        <EventDetails />
+                        <EventTabs />
+
+                    </div>
+
+                    <div className="col-span-4">
+                        <EventJoinCard />
+                    </div>
+                </div>
+            </DefaultContainer>
             <EventSuggestions />
-        </main>
+        </div>
     )
 }
